@@ -15,6 +15,7 @@ def emotion_detector(text_to_analyze):
         json={"raw_document": {"text": text_to_analyze}}
     )
 
+
     # Handle blank input / HTTP 400 response
     if response.status_code == 400:
         return {
@@ -46,4 +47,5 @@ def emotion_detector(text_to_analyze):
     dominant_emotion = max(scores, key=scores.get)
     scores["dominant_emotion"] = dominant_emotion
 
-    return scores
+
+return scores
